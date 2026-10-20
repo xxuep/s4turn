@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S4turn</title>
+    <!-- Google Font: Encode Sans Semi Expanded -->
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Semi+Expanded:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Ultraviolet & BareMux Scripts -->
+    <script src="/uv/uv.bundle.js"></script>
+    <script src="/uv/uv.config.js"></script>
+    <script src="/baremux/index.js"></script>
+    <script>
+        if ("serviceWorker" in navigator) {
+            window.addEventListener("load", async () => {
+                await navigator.serviceWorker.register("/uv/sw.js");
+            });
+        }
+    </script>
+    <link rel="stylesheet" href="s4turn.css">
+</head>
+<body>
+    <!-- Dynamic Wallpaper Background Container -->
+    <div id="wallpaper-bg" class="wallpaper-bg"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-logo" id="sidebarLogoContainer" title="S4turn">
+                <img id="customLogoImg" src="" alt="Logo" style="display:none; width:36px; height:36px; border-radius:8px; object-fit:cover;">
+                <span class="logo-text" id="defaultLogoText">S4</span>
+            </div>
+            <div class="sidebar-menu">
+                <button class="nav-btn active" data-target="home-view" title="Home"><img class="sidebar-nav-icon" alt=""></button>
+                <button class="nav-btn" data-target="browser-view" title="Browser"><img class="sidebar-nav-icon" alt=""></button>
+                <button class="nav-btn" data-target="games-view" title="Games"><img class="sidebar-nav-icon" alt=""></button>
+                <button class="nav-btn" data-target="apps-view" title="Apps"><img class="sidebar-nav-icon" alt=""></button>
+                <button class="nav-btn" data-target="music-view" title="Music"><img class="sidebar-nav-icon" alt=""></button>
+            </div>
+            <div class="sidebar-bottom">
+                <button class="nav-btn" data-target="settings-view" title="Settings"><img class="sidebar-nav-icon" alt=""></button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Home View -->
+            <section id="home-view" class="view active-view">
+                <div class="home-scroll-container">
+                    <div class="home-hero">
+                        <h1 id="typewriter-title"></h1>
+                        <div class="quick-shortcuts">
+                            <div class="shortcut-icon" data-url="https://www.youtube.com" title="YouTube"><img alt="YouTube"></div>
+                            <div class="shortcut-icon" data-url="https://discord.com" title="Discord"><img alt="Discord"></div>
+                            <div class="shortcut-icon" data-url="https://www.tiktok.com" title="TikTok"><img alt="TikTok"></div>
+                            <div class="shortcut-icon" data-url="https://www.poki.com" title="Poki"><img alt="Movies"></div>
+                            <div class="shortcut-icon" data-url="https://www.chatgpt.com" title="ChatGPT"><img alt="Snapchat"></div>
+                        </div>
+                        <div class="home-search-bar">
+                            <input type="text" id="homeUrlInput" placeholder="Search or enter URL...">
+                            <button id="homeSearchBtn"><img class="custom-ui-icon" data-icon="search" alt=""></button>
+                        </div>
+                        <!-- Swinging Randomizing Text Banner -->
+                        <div class="swinging-banner-container">
+                            <div id="swingingText" class="swinging-text">random quotes go here i think</div>
+                        </div>
+                    </div>
+
+                    <!-- Scrollable Centered Information Section -->
+                    <div class="home-info-section">
+                        <h2>s4turn reborn</h2>
+                        <h3>hello</h3>
+                        <p>yo s4turn is back and better than before!!</p>
+                        <h3>creds</h3>
+                        <p>creds to the og s4turn owner and creds to me randomm.html</p>
+                        <h3>updates</h3>
+                        <p>fixed geometry dash wasm (now geometry dash real)</p>
+                        <p>fixed all escape roads</p>
+                        <p>added new minecraft thumbnails</p>
+                        <p>added new cursor</p>
+                        <p>more random quotes</p>
+                        <p>tweaked some colors</p>
+                        <p>a couple more games</p>
+                        <p>added the first app</p>
+                        <p>started development on the music</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Browser View -->
+            <section id="browser-view" class="view">
+                <div class="browser-header" id="browserHeader">
+                    <div class="browser-tabs" id="browserTabsContainer">
+                        <button class="new-tab-btn" id="newTabBtn" title="New Tab"><img class="custom-ui-icon" data-icon="newTab" alt=""></button>
+                    </div>
+                    <div class="browser-nav-bar">
+                        <button class="nav-control-btn" id="backBtn" title="Back"><img class="custom-ui-icon" data-icon="back" alt=""></button>
+                        <button class="nav-control-btn" id="forwardBtn" title="Forward"><img class="custom-ui-icon" data-icon="forward" alt=""></button>
+                        <button class="nav-control-btn" id="refreshBtn" title="Refresh"><img class="custom-ui-icon" data-icon="refresh" alt=""></button>
+                        <button class="nav-control-btn" id="homeTabBtn" title="Home"><img class="custom-ui-icon" data-icon="home" alt=""></button>
+                        <div class="browser-address-container">
+                            <input type="text" id="urlInput" placeholder="Enter search or web address">
+                        </div>
+                        <button id="searchButton" title="Go"><img class="custom-ui-icon" data-icon="forward" alt=""></button>
+                        <button class="nav-control-btn" id="fullscreenBtn" title="Fullscreen"><img class="custom-ui-icon" data-icon="fullscreen" alt=""></button>
+                        <button class="nav-control-btn" id="devToolsBtn" title="HTML Dev Tools"><img class="custom-ui-icon" data-icon="devTools" alt=""></button>
+                    </div>
+                </div>
+                <div class="browser-body">
+                    <div id="browserHomeContainer" class="browser-home-container">
+                        <h1>S4turn</h1>
+                        <div class="browser-home-search">
+                            <input type="text" id="browserHomeInput" placeholder="Search with DuckDuckGo or enter address...">
+                            <button id="browserHomeSearchBtn"><img class="custom-ui-icon" data-icon="search" alt=""></button>
+                        </div>
+                    </div>
+                    <iframe id="iframeWindow" class="iframeWindow" style="display:none;"></iframe>
+                </div>
+            </section>
+
+            <!-- Games View -->
+            <section id="games-view" class="view">
+                <div class="library-header">
+                    <h2>games</h2>
+                    <p id="game-count">Showing 0 games</p>
+                    <input type="text" id="gameSearchInput" placeholder="Search games...">
+                </div>
+                <div class="library-grid" id="gamesGrid"></div>
+            </section>
+
+            <!-- Apps View -->
+            <section id="apps-view" class="view">
+                <div class="library-header">
+                    <h2>apps</h2>
+                    <p id="app-count">Showing 0 apps</p>
+                    <input type="text" id="appSearchInput" placeholder="Search apps...">
+                </div>
+                <div class="library-grid" id="appsGrid"></div>
+            </section>
+
+            <!-- Music View -->
+            <section id="music-view" class="view">
+                <div class="library-header">
+                    <h2>music</h2>
+                    <p id="music-count">Showing 0 items</p>
+                    <input type="text" id="musicSearchInput" placeholder="Search music...">
+                </div>
+                <div class="library-grid" id="musicGrid"></div>
+            </section>
+            
+            <!-- Settings View -->
+            <section id="settings-view" class="view">
+                <div class="settings-container">
+                    <h2>settings</h2>
+                    <div class="setting-group">
+                        <label>proxy transport</label>
+                        <select id="settingProxyTransport">
+                            <option value="epoxy">epoxy</option>
+                            <option value="bare">bare</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label>search engine</label>
+                        <select id="settingSearchEngine">
+                            <option value="duckduckgo">DuckDuckGo (Recommended)</option>
+                            <option value="brave">Brave</option>
+                            <option value="yahoo">Yahoo</option>
+                            <option value="bing">Bing</option>
+                            <option value="google">Google (not recommended)</option>
+                        </select>
+                    </div>
+                    <div class="setting-group inline-setting">
+                        <label>inverted colors</label>
+                        <label class="switch">
+                            <input type="checkbox" id="settingColorInvert">
+                            <span class="slider round"></span>
+                        </label>
+                    </div>
+                    <div class="setting-group">
+                        <label>wallpaper</label>
+                        <select id="settingWallpaperSelect">
+                            <option value="1">S4turn 1</option>
+                            <option value="2">S4turn 2</option>
+                            <option value="3">S4turn 3</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- HTML Dev Tools Modal -->
+    <div id="devToolsModal" class="devtools-modal">
+        <div class="devtools-content">
+            <div class="devtools-header">
+                <h3>inspect</h3>
+                <button id="closeDevTools" class="close-btn"><img class="custom-ui-icon" data-icon="close" alt=""></button>
+            </div>
+            <textarea id="devToolsTextarea" readonly></textarea>
+        </div>
+    </div>
+
+    <img id="animated-site-cursor" src="https://raw.githubusercontent.com/xxuep/offline-game-thumbnails/main/MikuCursor-ezgif.com-ani-to-gif-converter.gif" alt="" aria-hidden="true">
+    <script src="s4turn.js"></script>
+</body>
+</html>
